@@ -8,10 +8,18 @@ class DownloadWindow:
             name = "Download Manager"
 
         self.root = Tk(name)
+        self.root.title(name)
 
         if (width == None): width = 200;
         if (height == None): height = 200;
-        self.root.geometry(str(width) + "x" + str(height))
+
+        scrwidth = self.root.winfo_screenwidth()
+        scrheight = self.root.winfo_screenheight()
+
+        x = (scrwidth / 2) - (width / 2)
+        y = (scrheight / 2) - (height / 2)
+        self.root.geometry('%dx%d+%d+%d' % (width, height, x, y))
+
         self.setup_window()
         self.root.mainloop()
 
@@ -19,17 +27,14 @@ class DownloadWindow:
         self.download_pane_frame = Frame(self.root)
         self.download_options_frame = Frame(self.root)
         self.menubar = Menu(self.root)
+
         self.root.config(menu=self.menubar)
 
         self.fileMenu = Menu(self.menubar)
-        self.submenu = Menu(self.fileMenu)
-        self.submenu.add_command(label="New feed")
-        self.submenu.add_command(label="Bookmarks")
-        self.submenu.add_command(label="Mail")
-        self.fileMenu.add_cascade(label='Import', menu=self.submenu, underline=0)
+        self.fileMenu.add_command(label="Add Download", underline=0)
+        self.fileMenu.add_command(label="Remove Download", underline=0)
 
-        self.fileMenu.add_separator()
+        self.viewMenu = Menu(self.menubar)
 
-        self.fileMenu.add_command(label="Exit", underline=0)
         self.menubar.add_cascade(label="File", underline=0, menu=self.fileMenu)
-
+        self.menubar.add_command(label="Exit", command=lambda: quit(0))
