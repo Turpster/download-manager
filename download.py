@@ -53,7 +53,7 @@ class Download:
             pass
         # TODO FINISHED DOWNLOAD
     def download(self):
-        self.file = open(self.saveloc + ".download", "w") # TODO make sure to close file
+        self.file = open(self.saveloc + ".download", "wb") # TODO make sure to close file
         while True:
             try:
                 chunk = self.response.read(self.chunksize)

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d37a6cc-1615-4204-bffa-a3e7cfde1e03" name="Default Changelist" comment="" />
+    <list default="true" id="9d37a6cc-1615-4204-bffa-a3e7cfde1e03" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/download.py" beforeDir="false" afterPath="$PROJECT_DIR$/download.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/download_manager$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1535921508455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/download_manager$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1535923031644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1802944017">
@@ -23,13 +26,13 @@
         <counts>
           <entry key="dummy" value="13" />
           <entry key="gitignore" value="11" />
-          <entry key="py" value="8526" />
+          <entry key="py" value="8527" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="24" />
-          <entry key="Python" value="8526" />
+          <entry key="Python" value="8527" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -91,17 +94,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/download.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="347">
+              <caret line="48" column="16" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1535921199757" expanded="true" signature="200:206" ph="..." />
-                <marker date="1535921199757" expanded="true" signature="266:418" ph="..." />
-                <marker date="1535921199757" expanded="true" signature="463:2038" ph="..." />
-                <marker date="1535921199757" expanded="true" signature="2146:2545" ph="..." />
+                <marker date="1535923000472" expanded="true" signature="200:206" ph="..." />
+                <marker date="1535923000472" expanded="true" signature="266:418" ph="..." />
+                <marker date="1535923000472" expanded="true" signature="463:2038" ph="..." />
+                <marker date="1535923000472" expanded="true" signature="2147:2546" ph="..." />
               </folding>
             </state>
           </provider>
@@ -116,11 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/start.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="80">
+              <caret line="5" column="118" selection-start-line="5" selection-start-column="118" selection-end-line="5" selection-end-column="118" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -136,6 +139,11 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>r</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -163,7 +171,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2003" />
+    <option name="x" value="2175" />
     <option name="y" value="-8" />
     <option name="width" value="1400" />
     <option name="height" value="857" />
@@ -260,19 +268,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1616" height="916" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21529563" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21529563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.39258313" />
+      <window_info anchor="bottom" id="Terminal" weight="0.25214592" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2360515" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28132993" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39914164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -367,26 +376,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/start.py">
+    <entry file="file://$PROJECT_DIR$/download.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="347">
+          <caret line="48" column="16" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1535923000472" expanded="true" signature="200:206" ph="..." />
+            <marker date="1535923000472" expanded="true" signature="266:418" ph="..." />
+            <marker date="1535923000472" expanded="true" signature="463:2038" ph="..." />
+            <marker date="1535923000472" expanded="true" signature="2147:2546" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/download.py">
+    <entry file="file://$PROJECT_DIR$/start.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="80">
+          <caret line="5" column="118" selection-start-line="5" selection-start-column="118" selection-end-line="5" selection-end-column="118" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1535921199757" expanded="true" signature="200:206" ph="..." />
-            <marker date="1535921199757" expanded="true" signature="266:418" ph="..." />
-            <marker date="1535921199757" expanded="true" signature="463:2038" ph="..." />
-            <marker date="1535921199757" expanded="true" signature="2146:2545" ph="..." />
+            <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
