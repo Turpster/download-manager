@@ -1,4 +1,4 @@
-from ConfigParser import *
+from configparser import *
 import os
 
 class Config:
@@ -7,8 +7,11 @@ class Config:
         self.fileloc = fileloc
 
         if not os.path.isfile(fileloc):
-            open(fileloc, "w").close()
-            self.config.write(fileloc)
+            with open(fileloc, "w") as file:
+                self.config.write(file)
+
+        print ("s")
         self.config.read(fileloc)
     def save(self):
-        self.config.write(self.fileloc)
+        with open(self.fileloc, "w") as file:
+            self.config.write(file)

@@ -1,4 +1,5 @@
-from Tkinter import *
+from tkinter import *
+from downloadmanager import *
 
 class DownloadWindow:
     def __init__(self, name=None, width=None, height=None):
@@ -21,8 +22,14 @@ class DownloadWindow:
         self.root.geometry('%dx%d+%d+%d' % (width, height, x, y))
 
         self.setup_window()
+
+        self.DownloadManager = DownloadManager()
+
         self.root.mainloop()
 
+    def load_downloads(self):
+        # TODO LOAD DOWNLOADS FROM DOWNLOADMANAGER
+        pass
     def setup_window(self):
         self.download_pane_frame = Frame(self.root)
         self.download_options_frame = Frame(self.root)

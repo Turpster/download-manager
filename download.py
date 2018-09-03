@@ -1,7 +1,7 @@
-import urllib2
+import urllib.request
 import threading
 import os
-import requests
+import time
 
 class Download:
     class Status:
@@ -16,7 +16,6 @@ class Download:
         self.thread.start()
     def run(self, url, saveloc, name, chunksize):
         self.url = url
-        print(url)
         if not os.path.exists(saveloc):
             self.saveloc = saveloc
         else: raise Exception("File already exists") # Maybe be change this to a do while if the user hasn't selected a Download?
@@ -27,38 +26,42 @@ class Download:
             self.name = url.strip('/')[-1]
         else:
             self.name = name
-        print(url)
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'}
-        request = urllib2.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'})
-        self.response = urllib2.urlopen(request)
+        request = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'})
+        self.response = urllib.request.urlopen(request)
         try:
             self.size = int(self.response.info().getheader('Content-Length').strip())
+            self.sized = True
         except Exception:
             self.size = None
+            self.sized = False
             raise Exception
             # TODO Handle error
 
-        print(self.size)
         self.bytessofar = 0
 
         if self.download():
             self.file.close()
-            os.rename(self.saveloc + ".download", self.saveloc[::-9]) # Might be wrong
-            print(self.saveloc[::-9]) # TODO Delete this line after testing
-            self.change_status(Download.Status.DOWNLOADED)
-            pass
+            os.rename(self.saveloc + ".download", self.saveloc) # Might be wrong
+            self.status = Download.Status.DOWNLOADED
         else:
+            self.file.close()
             # TODO HANDLE ERROR
-            # Rename file extension
+
             pass
         # TODO FINISHED DOWNLOAD
+
     def download(self):
         self.file = open(self.saveloc + ".download", "wb") # TODO make sure to close file
         while True:
+            if (self.status == Download.Status.PAUSED):
+                time.sleep(3)
+                continue
             try:
                 chunk = self.response.read(self.chunksize)
             except:
                 # TODO HANDLE ERROR
+                self.status = Download.Status.ERROR
                 return False
             self.bytessofar += len(chunk)
             self.file.write(chunk)
@@ -67,11 +70,8 @@ class Download:
             if not chunk:
                 return True
 
-            self.progress = self.size / self.bytessofar
+            if (self.sized):
+                self.progress = self.size / self.bytessofar
+            else:
+                self.progress = None
             continue
-
-
-    def change_status(self, mode):
-        self.status = mode
-        # TODO Change the mode of the download
-        pass
