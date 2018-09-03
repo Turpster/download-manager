@@ -4,18 +4,29 @@ from config import Config
 import os
 
 class DownloadManager:
-    def __init__(self):
+    def __init__(self, updatefunc):
+        self.updatefunc = updatefunc
+
         self.downloads = []
         self.config = Config("config/config.ini")
+        self.downloadfile = Config("config/downloads.ini")
         if not "DownloadManager" in self.config.config.sections():
             self.config.config["DownloadManager"] = {'DownloadLocation': get_download_path()}
             self.config.save()
-    def download(self, turl):
+
+        for downl in self.downloadfile.config.get("files"):
+            
+    def add_download(self, turl):
 
         if self.get_download(url=turl) == None:
             self.downloads.append(Download(turl, self.config.config["DownloadManager"]["DownloadLocation"] + "\\" + turl.strip('/')[-1]))
         else:
             raise Exception("Download url is already being downloaded")
+
+        self.updatefunc()
+    def remove_download(self):
+        self.updatefunc()
+        pass
     def pause_download(self, download):
         if download in self.downloads:
             download.thread.status = Download.Status.PAUSED

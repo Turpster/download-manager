@@ -23,7 +23,7 @@ class DownloadWindow:
 
         self.setup_window()
 
-        self.DownloadManager = DownloadManager()
+        self.DownloadManager = DownloadManager(updatefunc=self.download_update)
 
         self.root.mainloop()
 
@@ -31,17 +31,25 @@ class DownloadWindow:
         # TODO LOAD DOWNLOADS FROM DOWNLOADMANAGER
         pass
     def setup_window(self):
-        self.download_pane_frame = Frame(self.root)
-        self.download_options_frame = Frame(self.root)
+        self.download_pane_grid = Frame(self.root)
         self.menubar = Menu(self.root)
 
         self.root.config(menu=self.menubar)
 
         self.fileMenu = Menu(self.menubar)
-        self.fileMenu.add_command(label="Add Download", underline=0)
-        self.fileMenu.add_command(label="Remove Download", underline=0)
+        self.fileMenu.add_command(label="Download...", underline=0)
+        self.fileMenu.add_command(label="Remove Download...", underline=0)
 
         self.viewMenu = Menu(self.menubar)
 
         self.menubar.add_cascade(label="File", underline=0, menu=self.fileMenu)
         self.menubar.add_command(label="Exit", command=lambda: quit(0))
+
+        self.download_pane_grid.pack()
+
+        self.download_update()
+
+    """ICON | FILENAME | PERCENT | PROGRESS BAR | SIZE | URL"""
+
+    def download_update(self):
+        pass
